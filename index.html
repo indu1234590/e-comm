@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenta Mobiles - Login/Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.4/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-cover bg-center" style="background-image: url('images/bbbb.avif');">
+
+    
+    <div class="absolute top-5 left-5 text-5xl font-bold text-black">
+        TENTA MOBILES
+    </div>
+
+    
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white bg-opacity-90 rounded-lg p-12 shadow-2xl w-full max-w-3xl">
+            
+            <div class="flex justify-center space-x-10 mb-10 text-4xl">
+                <button id="login-tab" class="px-10 py-4 font-bold bg-purple-500 text-white rounded-l-md" onclick="toggleForm('login')">LOGIN</button>
+                <button id="signup-tab" class="px-10 py-4 font-bold bg-gray-300 text-black rounded-r-md" onclick="toggleForm('signup')">SIGN UP</button>
+            </div>
+
+            
+            <form id="login-form" class="space-y-8">
+                <div>
+                    <input type="text" placeholder="Username" class="w-full p-6 rounded-md border border-gray-300 placeholder-gray-500 text-2xl" />
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" class="w-full p-6 rounded-md border border-gray-300 placeholder-gray-500 text-2xl" />
+                </div>
+                
+                <div class="flex justify-between items-center text-xl">
+                    <span class="text-gray-700">New user? <a href="#" class="text-purple-500 font-semibold" onclick="toggleForm('signup')">Sign up</a></span>
+                </div>
+                <div class="flex justify-between items-center space-x-6 mt-8">
+                    <a href="https://accounts.google.com/signin" target="_blank">
+                        <img src="images/g.webp" alt="Google" class="w-12 h-12">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-12 h-12">
+                    </a>
+                    <button class="px-10 py-4 bg-purple-500 text-white font-bold rounded-md text-2xl">Login</button>
+                </div>
+            </form>
+
+        
+            <form id="signup-form" class="space-y-8 hidden">
+                <div>
+                    <input type="text" placeholder="Username" class="w-full p-6 rounded-md border border-gray-300 placeholder-gray-500 text-2xl" />
+                </div>
+                <div>
+                    <input type="email" placeholder="Email" class="w-full p-6 rounded-md border border-gray-300 placeholder-gray-500 text-2xl" />
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" class="w-full p-6 rounded-md border border-gray-300 placeholder-gray-500 text-2xl" />
+                </div>
+                
+                <div class="flex justify-between items-center text-xl">
+                    <span class="text-gray-700">Existing user? <a href="#" class="text-purple-500 font-semibold" onclick="toggleForm('login')">Login</a></span>
+                </div>
+                <div class="flex justify-between items-center space-x-6 mt-8">
+                    <a href="https://accounts.google.com/signin" target="_blank">
+                        <img src="images/g.webp" alt="Google" class="w-12 h-12">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="w-12 h-12">
+                    </a>
+                    <button class="px-10 py-4 bg-purple-500 text-white font-bold rounded-md text-2xl">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        function toggleForm(form) {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('login-tab').classList.remove('bg-purple-500', 'text-white');
+            document.getElementById('signup-tab').classList.remove('bg-purple-500', 'text-white');
+            document.getElementById('login-tab').classList.add('bg-gray-300', 'text-black');
+            document.getElementById('signup-tab').classList.add('bg-gray-300', 'text-black');
+
+            if (form === 'login') {
+                document.getElementById('login-form').classList.remove('hidden');
+                document.getElementById('login-tab').classList.add('bg-purple-500', 'text-white');
+            } else {
+                document.getElementById('signup-form').classList.remove('hidden');
+                document.getElementById('signup-tab').classList.add('bg-purple-500', 'text-white');
+            }
+        }
+    </script>
+</body>
+</html>
